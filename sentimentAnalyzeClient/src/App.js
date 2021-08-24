@@ -30,7 +30,6 @@ class App extends React.Component {
       mode = "text"
       rows = 4
     }
-    document.getElementById("textinput").value = "";
       this.setState({innercomp:<textarea rows={rows} cols="50" id="textinput"/>,
       mode: mode,
       sentimentOutput:[],
@@ -50,9 +49,9 @@ class App extends React.Component {
         let output = data;
         let color = "white"
         switch(data) {
-          case "positive": color = "black";
-          case "negative": color = "black";
-          default: color = "black";
+          case "positive": color = "green";break;
+          case "negative": color = "red";break;
+          default: color = "yellow";
         }
         output = <div style={{color:{color},fontSize:20}}>{data}</div>
         this.setState({sentimentOutput:output});
